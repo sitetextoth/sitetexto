@@ -1,0 +1,363 @@
+
+@import url('https://fonts.googleapis.com/css?family=Rubik:wght@300;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #B2B7A6;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    text-indent: 20px;
+    text-align: justify;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 2s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+
+/* CSS do título principal */
+.title-container {
+    position: relative;
+}
+
+.title-main {
+    display: grid;
+    text-align: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.title-main h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 300px;
+}
+
+.title-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.title-box img {
+    height: 300px;
+    border-left: 2px solid black;
+    filter: invert(100%);
+}
+
+.rain {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.droplet {
+    position: absolute;
+    background-color: white;
+    width: 2px;
+    height: 15px;
+    animation: fall 2s linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+
+/* CSS dos títulos */
+.title {
+    text-align: center;
+    font-weight: bold;
+    padding: 1px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* CSS dos textos */
+.contrast {
+    color: var(--font-color, #B2B7A6);
+    background-color: var(--bg-color, #FFFFFF);
+    font-weight: bold;
+}
+
+.container {
+    width: 70%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.container .text {
+    padding: 10px;
+}
+
+.container div {
+    margin-bottom: 20px;
+}
+
+.description {
+    text-align: center;
+    width: 30%;
+    margin: 20px auto;
+    text-indent: 30px;
+    text-align: justify;
+}
+
+
+/* CSS dos botões */
+.button-container {
+    font-size: 1rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-indent: 0;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    width: 150px;
+}
+
+.button {
+    font-weight: 700;
+    color: #382b22;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    background: #fff0f0;
+    border: 2px solid #8d7c51;
+    border-radius: 0.75em;
+    transform-style: preserve-3d;
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.button::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f9c4d2;
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px #8d7c51;
+    transform: translate3d(0, 0.75em, -1em);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.button:hover {
+    background: #ffe9e9;
+    transform: translate(0, 0.25em);
+
+}
+
+.button:hover::before {
+    box-shadow: 0 0 0 2px #8d7c51;
+    transform: translate3d(0, 0.5em, -1em);
+}
+
+.button:active {
+    background: #ffe9e9;
+    transform: translate(0em, 0.75em);
+}
+
+.button:active::before {
+    box-shadow: 0 0 0 2px #8d7c51;
+    transform: translate3d(0, 0, -1em);
+}
+
+
+/* CSS dos capítulos */
+.chapter .hidden {
+    filter: blur(0);
+}
+
+.title .drop {
+    background-color: #B2B7A6;
+}
+
+.divide {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* CSS das boxes */
+:root {
+    --clr-1: #052b2f;
+    --clr-2: #073438;
+    --clr-3: #0e4b50;
+    --clr-4: #2d8f85;
+    --clr-5: #8d7c51;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--box-width, 90%);
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 1000%;
+    z-index: -1;
+    background: var(--border-color, #fff);
+    border-radius: inherit;
+    animation: rotate 8s linear infinite;
+}
+
+.box::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #B2B7A6;
+    inset: 5px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(var(--degree, 360deg));
+    }
+}
+
+.box img {
+    max-width: var(--box-img-width, 360px);
+    margin-right: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+  
+.box p {
+    margin: 0 10px;
+    width: 50%;
+}
+
+/* CSS das partes picantes */
+.sex {
+    border-radius: 0;
+}
+
+.sex-img {
+    filter: blur(5px) grayscale(1);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sex-img:hover {
+    filter: blur(0) grayscale(1);
+}
+
+.sex-hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1.2s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.sex-show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    max-height: 600px;
+}
+
+/* CSS da box de imagens */
+.image-box {
+    display: flex;
+    justify-content: center;
+}
+  
+.expandable-image {
+    width: 420px;
+    max-height: 280px;
+    margin: 10px;
+    border: 3px solid white;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+  
+.expandable-image:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos para telas pequenas (móveis) */
+@media screen and (max-width: 1400px) {
+    /* Seletor de estilo específico para telas menores */
+    .container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .image-box {
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+    }
+
+    .expandable-image {
+        margin: 2px;
+    }
+
+    .box {
+        flex-direction: column;
+    }
+
+    .box p {
+        margin: 5px;
+        width: 100%;
+    }
+
+    .sex-show { 
+        max-height: 1200px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .divide {
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+    }
+}
