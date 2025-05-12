@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (bodyId === 'text-4') {
         startRain();
-    } else if (bodyId === 'text-5') {
+    } else if (bodyId === 'text-6') {
         createSnowflakes();
     }
 });

@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: #F7F2E7;
-    color: #4A4A4A;
+    background-color: #616852;
+    color: white;
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
     text-indent: 20px;
@@ -65,7 +65,33 @@ body {
 }
 
 .title-box img {
-    height: 400px;
+    height: 300px;
+    border-left: 2px solid white;
+    padding-left: 25px;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: white;
+    font-size: 1em;
+    opacity: 0.8;
+    user-select: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 0.2;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(300vh);
+        opacity: 0;
+    }
 }
 
 @keyframes sway {
@@ -223,7 +249,6 @@ button {
     border-radius: 8px;
     position: relative;
     overflow: hidden;
-    color: black;
 }
 
 .box::before {
@@ -232,7 +257,7 @@ button {
     width: 170px;
     height: 1000%;
     z-index: -1;
-    background: var(--border-color, #78211E);
+    background: var(--border-color, #fff);
     border-radius: inherit;
     animation: rotate 8s linear infinite;
 }
@@ -241,7 +266,7 @@ button {
     content: "";
     position: absolute;
     z-index: -1;
-    background: #C97E6D;
+    background: #BEB3AC;
     inset: 5px;
 }
 
