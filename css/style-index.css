@@ -4,7 +4,7 @@ html {
     background-image: url("imagens/index/desenho2.png");
     background-repeat: no-repeat;
     background-position: right;
-    background-color: rgb(70, 2, 2);
+    background-color: rgb(136, 24, 24);
     /* background-color: -moz-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(42,0,0,1) 35%, rgba(42,0,0,1) 65%, rgba(0,0,0,1) 100%);
     background-color: -webkit-linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(42,0,0,1) 35%, rgba(42,0,0,1) 65%, rgba(0,0,0,1) 100%);
     background-color: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(42,0,0,1) 35%, rgba(42,0,0,1) 65%, rgba(0,0,0,1) 100%);
